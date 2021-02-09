@@ -9,6 +9,9 @@ Console.WriteLine($"teljes for megoldás: {FullSearches.full_search_for(vector, 
 Console.WriteLine($"rekurzív megoldás: {FullSearches.full_search_rec(vector, 17)}");
 
 
-Console.WriteLine($"lineris for megoldás: {LinearSearches.lin_search_for(vector, 64)}");
+Console.WriteLine($"lineris for megoldás: {LinearSearches.lin_search_for(vector, 94)}");
 
 Console.WriteLine($"lineris recurzív megoldás: {LinearSearches.lin_search_rec(vector, 64)}");
+
+
+Console.WriteLine($"teljes while megoldás: {FullSearches.full_search_while(vector, 94)}");

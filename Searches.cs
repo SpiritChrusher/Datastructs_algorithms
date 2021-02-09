@@ -8,17 +8,17 @@ namespace Datastructs_algorithms
 {
     public static class FullSearches
     {
-       public static int full_search_while(int[] vec, int value)
+       public static int? full_search_while(int[] vec, int value)
         {
-            int i = 0;
-            while (i < vec.Length && vec[i] != value)
+            int i = 1;
+            while (i <= vec.Length && vec[i-1] != value)
             {
                 i++;
             }
             if (i > vec.Length)
             {
                 Console.WriteLine("there is no such element");
-                return -1;
+                return null;
             }
             else
             {
@@ -26,7 +26,7 @@ namespace Datastructs_algorithms
             }
         }
 
-        public static int full_search_for(int[] vec, int value)
+        public static int? full_search_for(int[] vec, int value)
         {
             for (int i = 0; i < vec.Length; i++)
             {
@@ -36,20 +36,20 @@ namespace Datastructs_algorithms
                 }
             }
             Console.WriteLine("Wasn't found");
-            return -1;
+            return null;
         }
 
-        public static int full_search_rec(int[] vec, int value)
+        public static int? full_search_rec(int[] vec, int value)
         {
 
             if (vec.Length == 0)
             {
                 Console.WriteLine("empty array");
-                return -1;
+                return null;
             }
             else if (vec[0] == value)
             {
-                return 0;
+                return null;
             }
             else
             {
@@ -57,12 +57,12 @@ namespace Datastructs_algorithms
             }
         }
 
-        public static int full_search_rec_mine(int[] vec, int value, int i) // itt kell egy 0 kezdőérték paraméternek
+        public static int? full_search_rec_mine(int[] vec, int value, int i) // itt kell egy 0 kezdőérték paraméternek
         {
             if (vec.Length == 0)
             {
                 Console.WriteLine("empty array");
-                return -1;
+                return null;
             }
             else if (vec[i] == value)
             {
@@ -79,23 +79,23 @@ namespace Datastructs_algorithms
     public static class LinearSearches
     {
 
-        public static int lin_search_while(int[] vec, int value)
+        public static int? lin_search_while(int[] vec, int value)
         { 
-            int i = 0;
-            while ( i <= vec.Length && vec[i] < value)
+            int i = 1;
+            while ( i <= vec.Length && vec[i-1] < value)
             {
                 i++;
             }
-            if (i > vec.Length && vec[i] > value)
+            if (i > vec.Length || vec[i] > value)
             {
                 Console.WriteLine("not found");
-                return -1;
+                return null;
             }
             else { return i; }
 
         }
 
-        public static int lin_search_for(int[] vec, int value)
+        public static int? lin_search_for(int[] vec, int value)
         {
             for (int i = 0; i < vec.Length; i++)
             {
@@ -106,19 +106,19 @@ namespace Datastructs_algorithms
                 else if(vec[i] > value)
                 {
                     Console.WriteLine("there is no such value");
-                    return -1;
+                    return null;
                 }
             }
             Console.WriteLine("there is no such value");
-            return -1;
+            return null;
         }
-        public static int lin_search_rec(int[] vec, int value)
+        public static int? lin_search_rec(int[] vec, int value)
         {
 
             if (vec.Length == 0 || vec[0] > value)
             {
                 Console.WriteLine("empty array");
-                return -1;
+                return null;
             }
             else if (vec[0] == value)
             {
