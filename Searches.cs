@@ -49,11 +49,11 @@ namespace Datastructs_algorithms
             }
             else if (vec[0] == value)
             {
-                return null;
+                return 0;
             }
             else
             {
-                return full_search_rec(vec[1..^0], value) + 1;
+                return full_search_rec(vec[1..^0], value)+1;
             }
         }
 
@@ -130,5 +130,81 @@ namespace Datastructs_algorithms
             }
         }
 
+    }
+
+    public static class BinarySearches
+    {
+        public static int? bin_search_while(int[] vec, int value)
+        {
+            int min = 1;
+            int max = vec.Length;
+
+            while (min <= max)
+            {
+                int mid = (min + max) / 2;
+
+                if (vec[mid] == value)
+                {
+                    return mid;
+                }
+                else if (vec[mid] > value)
+                {
+                    max = mid - 1;
+                }
+                else
+                {
+                    min = mid + 1;
+                }
+            }
+            Console.WriteLine("not found");
+            return null;
+        }
+
+        public static int? bin_search_rec(int[] vec, int value) // something is wrong
+        {
+            if (vec.Length == 0)
+            {
+                Console.WriteLine("empty array");
+                return null;
+            }
+            int mid = vec.Length / 2;
+            if (vec[mid] == value)
+            {
+                return mid;
+            }
+            else if (vec[mid] > value)
+            {
+                mid--;
+                return bin_search_rec(vec[0..mid], value);
+            }
+            else
+            {
+                mid++;
+                return bin_search_rec(vec[mid..^0], value);
+            }
+        }
+
+        public static int? bin_search_rec2(int[] vec, int value,int min, int max) //good 
+        {
+            if (min >max)
+            {
+                Console.WriteLine("no such value");
+                return null;
+            }
+            int mid = (min + max) / 2;
+
+            if (vec[mid] == value)
+            {
+                return mid;
+            }
+            else if(vec[mid] > value)
+            {
+                return bin_search_rec2(vec, value, min, mid-1);
+            }
+            else
+            {
+                return bin_search_rec2(vec, value, mid+1, max);
+            }
+        }
     }
 }
