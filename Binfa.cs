@@ -12,6 +12,7 @@ namespace Datastructs_algorithms
         public static int Sullyeszt(int[] K, int from, int end)
         {
             int x = K[from];
+               
             var child = from + from;
 
             while (child <= end)
@@ -35,7 +36,7 @@ namespace Datastructs_algorithms
         }
 
 
-        public static int KUPAC_RENDEZ(int[] K)
+        public static int[] KUPAC_RENDEZ(int[] K)
         {
             int i = K.Length / 2;
 
@@ -54,7 +55,7 @@ namespace Datastructs_algorithms
                 i -= 1;
                 Sullyeszt(K, 1, i);
             }
-
+            return K;
         }
     }
 }
