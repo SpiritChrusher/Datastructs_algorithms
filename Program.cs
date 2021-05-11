@@ -32,10 +32,6 @@ Console.WriteLine("--------------------");
 int[] Kupac = new[] { 96, 56, 97, 73, 79, 49, 47, 37, 12, 81, 76, 55, 59, 27, 13, 2, 66, 8 };
 Console.WriteLine("-------------------");
 Console.WriteLine(Kupac.Length);
-Console.WriteLine("-------------------");
-var ujkupac = Binfa.KUPAC_RENDEZ(Kupac);
-foreach (var item in ujkupac)
-{
-    Console.WriteLine(item);
-}
+Console.WriteLine("-------------------lalala");
+Binfa.KUPAC_RENDEZ(Kupac);
 
